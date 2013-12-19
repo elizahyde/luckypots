@@ -13,10 +13,4 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
-* Ignore Database.yml
-/config/database.yml
-
-*/.DS_Store
-.DS_Store
-.DS_Store?
+.env
