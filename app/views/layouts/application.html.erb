@@ -5,7 +5,9 @@
   <link href='http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps|Oleo+Script:400,700' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "modernizr" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <div class="fixed">
@@ -22,7 +24,7 @@
         <!-- Left Nav Section -->
         <ul class="left">
           <li class="divider"></li>
-          <li class="active"><a href="/potlucks">Potlucks</a></li>
+          <li class="active"><a href="/">Potlucks</a></li>
           <li class="divider"></li>
           <li><a href="/admin">Admin</a></li>
           <li class="divider"></li>
@@ -39,11 +41,11 @@
   </div>
 
 
-  <script type="text/javascript">
-      jQuery.fn.spectragram.accessData = {
-          accessToken: ELIZAINSTATOKEN
-          clientID: INSTACLIENTID
-      };
+<script type="text/javascript">
+    jQuery.fn.spectragram.accessData = {
+        accessToken: ELIZAINSTATOKEN
+        clientID: INSTACLIENTID
+    };
 </script>
 
 <script>
@@ -59,15 +61,10 @@
     )
 </script>
 
-<!-- Check for Zepto support, load jQuery if necessary -->
-<script>
-  document.write('<script src=/js/vendor/'
-    + ('__proto__' in {} ? 'zepto' : 'jquery')
-    + '.js><\/script>');
-</script>
 
 <script>
   $(document).foundation();
 </script>
+
 </body>
 </html>
