@@ -2,13 +2,72 @@
 <html>
 <head>
   <title>Luckypots</title>
+  <link href='http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps|Oleo+Script:400,700' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="fixed">
+    <nav class="top-bar">
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1 class="luckypot"><a href="/"><p class="yellow">Get</p> Lucky <p class="yellow">Pots</p> </a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <!-- Left Nav Section -->
+        <ul class="left">
+          <li class="divider"></li>
+          <li class="active"><a href="/potlucks">Potlucks</a></li>
+          <li class="divider"></li>
+          <li><a href="/admin">Admin</a></li>
+          <li class="divider"></li>
+          </uL>
+          <ul class="right">
+            <li> <img src="https://graph.facebook.com/yekaterina/picture">;</li>
+          </ul>
+      </section>
+    </nav>
+  </div>
 
-<%= yield %>
+  <div class="container">
+    <%= yield %>
+  </div>
 
+
+  <script type="text/javascript">
+      jQuery.fn.spectragram.accessData = {
+          accessToken: ELIZAINSTATOKEN
+          clientID: INSTACLIENTID
+      };
+</script>
+
+<script>
+  $(document).ready(
+    $("#modal").click(function(){
+      $('#itemModal').foundation('reveal', 'open');
+    }
+      ))
+  $(document).ready(
+    $("#closemodal").click(function() {
+      $('#itemModal').foundation('reveal', 'close');
+    })
+    )
+</script>
+
+<!-- Check for Zepto support, load jQuery if necessary -->
+<script>
+  document.write('<script src=/js/vendor/'
+    + ('__proto__' in {} ? 'zepto' : 'jquery')
+    + '.js><\/script>');
+</script>
+
+<script>
+  $(document).foundation();
+</script>
 </body>
 </html>

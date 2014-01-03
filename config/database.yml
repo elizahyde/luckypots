@@ -2,7 +2,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: luckypots_development
+  database: luckypots_ror_development
   pool: 5
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['DB_PASS'] %>
@@ -10,7 +10,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: luckypots_test
+  database: luckypots_ror_test
   pool: 5
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['DB_PASS'] %>
@@ -18,7 +18,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: luckypots_production
+  database: luckypots_ror_production
   pool: 5
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['DB_PASS'] %>
