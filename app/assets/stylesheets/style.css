@@ -16,7 +16,6 @@
 }
 .top-bar .name h1 a {
  font-size: 50px;
-
  font-family: 'Oleo Script Swash Caps', cursive;
  color: red;
  letter-spacing: 2px;
@@ -31,19 +30,12 @@
 
 .tagsFeed{
   list-style-type: none;
-
-
-
 }
 
 .tagsFeed li{
   display: inline;
-
-
 }
 
 .tagsFeed img{
-
   padding-bottom: 15px;
-
 }
