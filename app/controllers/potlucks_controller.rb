@@ -8,7 +8,7 @@ class PotlucksController < ApplicationController
   end
 
   def create
-    @potluck = Potluck.new(params[:recipe])
+    @potluck = Potluck.new(potluck_params)
 
     if @potluck.save
       redirect_to "/potlucks/index"
@@ -40,5 +40,10 @@ class PotlucksController < ApplicationController
   def index
     @potlucks = Potluck.all
     @keywords = Keyword.all
+  end
+
+  def potluck_params
+    # This allows attributes to be saved to writing (rails 4 change)
+    params.require(:potluck).permit(:datetime, :location, :name)
   end
 end
