@@ -43,7 +43,6 @@ class PotlucksController < ApplicationController
   end
 
   def potluck_params
-    # This allows attributes to be saved to writing (rails 4 change)
     params.require(:potluck).permit(:datetime, :location, :name)
   end
 end

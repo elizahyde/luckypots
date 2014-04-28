@@ -1,17 +1,7 @@
 Luckypots::Application.routes.draw do
-  get "potluck/new"
-
-  get "potluck/create"
-
-  get "potluck/update"
-
-  get "potluck/edit"
-
-  get "potluck/destroy"
-
-  get "potluck/index"
-
-  get "potluck/show"
+  get 'keywords/new'
+  get '/admin', to: 'keywords#admin'
+  resources :potlucks
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

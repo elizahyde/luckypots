@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="large-12 columns">
+
+      <h3 class="luckypot">Item Tags</h3>
+      <a href="new_tag" class="button small">New Item tag</a><br><br>
+      <ul>
+        <% @tags.each do |tag| %>
+          <li>
+            <strong><%= tag.name %></strong> <a href="/edit_tag/<%= tag.id %>">Edit</a>
+          </li>
+        <% end %>
+      </ul>
+
+      <h3 class="luckypot">Potluck Keyword</h3>
+      <a href="new_keyword" class="button small">New Potluck Keyword</a><br><br>
+      <ul>
+        <% @keywords.each do |keyword| %>
+          <li>
+            <strong><%= keyword.name %></strong> <a href="/edit_keyword/<%= keyword.id %>">Edit</a>
+          </li>
+        <% end %>
+      </ul>
+
+      <h3 class="luckypot">People</h3>
+      <a href="new_person" class="button small">New Person</a><br><br>
+      <ul>
+        <% @people.each do |person| %>
+          <li>
+            <strong><a href="/view_person/<%=person.id%>"><%= person.name %></a></strong> who is <%= person.gender %> and single? <%= person.relationship %> <a href="/edit_person/<%= person.id %>">Edit</a>
+          </li>
+        <% end %>
+      </ul>
+
+      <h3 class="luckypot">All Items</h3>
+      <a href="new_item" class="button small">New Item</a><br><br>
+      <ul>
+        <% @items.each do |item| %>
+          <li>
+            <strong><%= item.name %></strong> <a href="/edit_item/<%= item.id %>">Edit</a> tags: <%= item.tags.map {|tag| tag.name }.join(", ") %> at potluck: <%= (item.potluck.name if item.potluck) %> and brought by <%= (item.person.name if item.person) %>
+          </li>
+        <% end %>
+      </ul>
+
+    </div>
+  </div>
