@@ -2,7 +2,7 @@
   <div class="large-12 columns">
     <h1>GET LUCKY AT A LUCKYPOT</h1>
     <h3 class="luckypot">Upcoming Potlucks</h3>
-    <a href="#" id="modal" button class="button">Plan a Potluck</a><br><br>
+    <a href="#" data-reveal-id="potluckModal" button class="button">Plan a Potluck</a><br><br>
     <ul>
       <% @potlucks.each do |potluck| %>
     <li>
@@ -13,7 +13,7 @@
   </div>
 </div>
 
-<div id="itemModal" class="reveal-modal">
+<div id="potluckModal" class="reveal-modal" data-reveal>
     <form method="post" action="/new_potluck" class="custom">
       <Fieldset>
         <legend>Create your Potluck</legend>
@@ -53,7 +53,7 @@
             </div>
           </div>
     </fieldset>
-
+<br>
     <div class="row">
       <div class="large-12 columns text-right">
           <button class="button small">Create Potluck</button>
