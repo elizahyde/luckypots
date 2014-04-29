@@ -46,9 +46,8 @@
             <div class="large-6 columns">
               <label>Keywords:</label>
               <% Keyword.all.each do |keyword| %>
-                  <label for="checkbox + [<%keyword.id%>]"><input type="checkbox" id="checkbox + [<%keyword.id%>]"
-                  name="potluck[keyword_ids][]" style="display: none;" value="<%=keyword.id%>"><%= keyword.name %>
-                    <br></label>
+                  <label for="checkbox + [<% keyword.id %>]"><input type="checkbox" id="checkbox + [<% keyword.id %>]"
+                  name="potluck[keyword_ids][]"  value="<%=keyword.id%>"><%= keyword.name %></label>
                   <% end %>
             </div>
           </div>
@@ -58,7 +57,6 @@
       <div class="large-12 columns text-right">
           <button class="button small">Create Potluck</button>
       </div>
-      </div>
+    </div>
     </form>
-<a class="close-reveal-modal " id="closemodal"></a>
 </div>

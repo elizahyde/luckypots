@@ -12,21 +12,12 @@
       </ul>
 
       <h3 class="luckypot">Potluck Keyword</h3>
-      <a href="new_keyword" class="button small">New Potluck Keyword</a><br><br>
+      <a href="#" data-reveal-id="keywordModal" class="button small">New Potluck Keyword</a><br><br>
       <ul>
         <% @keywords.each do |keyword| %>
           <li>
             <strong><%= keyword.name %></strong> <a href="/edit_keyword/<%= keyword.id %>">Edit</a>
-          </li>
-        <% end %>
-      </ul>
-
-      <h3 class="luckypot">People</h3>
-      <a href="new_person" class="button small">New Person</a><br><br>
-      <ul>
-        <% @people.each do |person| %>
-          <li>
-            <strong><a href="/view_person/<%=person.id%>"><%= person.name %></a></strong> who is <%= person.gender %> and single? <%= person.relationship %> <a href="/edit_person/<%= person.id %>">Edit</a>
+            <a href="/keywords/<%= keyword.id %>" data-method="delete" rel="nofollow">Delete</a>
           </li>
         <% end %>
       </ul>
@@ -42,4 +33,28 @@
       </ul>
 
     </div>
+  </div>
+
+  <div id="keywordModal" class="reveal-modal" data-reveal>
+    <%= form_for(@keyword, html: {"data-abide" => ""}) do |f| %>
+      <h1>Enter Potluck Keyword</h1>
+      <div>
+        <%= f.text_area :name, :required => "" %>
+        <small class="error">You must write in the box.</small>
+      </div><br>
+      <div>
+        <%= f.submit "Save", class: 'button submit' %>
+      </div>
+    <% end %>
+
+    <!-- <div class="row">
+      <div class="large-6 columns large-centered">
+        <h2 class="luckypot">Add a new potluck keyword:</h2>
+        <form method="post" action="/new_keyword">
+          Tag:
+          <input type="text" name="keyword[name]">
+          <button class="button small">Save Keyword</button>
+        </form>
+      </div>
+    </div> -->
   </div>
