@@ -14,7 +14,16 @@
 </div>
 
 <div id="potluckModal" class="reveal-modal" data-reveal>
-    <form method="post" action="/new_potluck" class="custom">
+
+  <%= simple_form_for @potluck do |f| %>
+    <%= f.input :name %>
+    <%= f.input :location %>
+    <%= f.input :datetime, :as => :string, :input_html => { :class => 'date_picker' } %>
+    <%= f.collection_check_boxes :keyword_ids, Keyword.all, :id, :name %>
+    <%= f.button :submit %>
+  <% end %>
+
+<!--     <form method="post" action="/new_potluck" class="custom">
       <Fieldset>
         <legend>Create your Potluck</legend>
           <div class="row">
@@ -58,5 +67,7 @@
           <button class="button small">Create Potluck</button>
       </div>
     </div>
-    </form>
+    </form> -->
+
+
 </div>

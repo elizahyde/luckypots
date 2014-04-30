@@ -40,6 +40,7 @@ class PotlucksController < ApplicationController
   def index
     @potlucks = Potluck.all
     @keywords = Keyword.all
+    @potluck = Potluck.new
   end
 
   def potluck_params
