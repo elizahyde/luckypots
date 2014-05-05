@@ -11,7 +11,7 @@ class PotlucksController < ApplicationController
     @potluck = Potluck.new(potluck_params)
 
     if @potluck.save
-      redirect_to "/potlucks/index"
+      redirect_to "/"
     else
       render :new
     end
