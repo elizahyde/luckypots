@@ -1,6 +1,10 @@
 class PotlucksController < ApplicationController
   def show
     @potluck = Potluck.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
@@ -41,6 +45,10 @@ class PotlucksController < ApplicationController
     @potlucks = Potluck.all
     @keywords = Keyword.all
     @potluck = Potluck.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def potluck_params

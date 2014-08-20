@@ -4,8 +4,27 @@
 
       <ul><p><em><%= @potluck.keywords.map {|keyword| keyword.name }.join(" - ") %></em></p></ul>
     <h4>Location: <%= @potluck.location %></h4>
-    <h4>Date: <%= @potluck.date.strftime("%A, %b %d, %Y") %></h4>
-      <a href="#" id="modal" button class="button">Add Item</a>
+    <h4>Date: <%= @potluck.datetime.strftime("%A, %b %d, %Y at %I:%M%p") %></h4>
+      <button id="newItem" class="button">Add Item</button>
+    <div id="itemForm">
+      <h3>Add an item</h3>
+      <form method="post" action="/new_item">
+        Item:
+        <input type="text" name="item[name]">
+        <input type="hidden" name="item[potluck_id]" value="<%= @potluck.id %>">
+
+
+      <!--This is just like how we pulled the stocks on the portfolio new/edit page
+        in brokerage. they were in a bridge the same way-->
+        <% Tag.all.each do |tag| %>
+            <input type="checkbox"
+            name="item[tag_ids][]" id="checkbox" value="<%=tag.id%>"><%= tag.name %>
+              <br>
+            <% end %>
+
+          <button class="button">Create Item</button>
+      </form>
+    </div>
     <table>
       <thead>
         <tr>
@@ -33,23 +52,3 @@
 </div>
 
 
-<div id="itemModal" class="reveal-modal">
-<h2>Add an item</h2>
-<form method="post" action="/new_item">
-  Item:
-  <input type="text" name="item[name]">
-  <input type="hidden" name="item[potluck_id]" value="<%= @potluck.id %>">
-
-
-<!--This is just like how we pulled the stocks on the portfolio new/edit page
-  in brokerage. they were in a bridge the same way-->
-  <% Tag.all.each do |tag| %>
-      <input type="checkbox"
-      name="item[tag_ids][]" id="checkbox" value="<%=tag.id%>"><%= tag.name %>
-        <br>
-      <% end %>
-
-    <button class="button success medium">Create Item</button>
-</form>
-<a class="close-reveal-modal" id="closemodal">&#215;</a>
-</div>

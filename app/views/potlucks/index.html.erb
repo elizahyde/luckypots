@@ -2,18 +2,18 @@
   <div class="large-12 columns">
     <h1>GET LUCKY AT A LUCKYPOT</h1>
     <h3 class="luckypot">Upcoming Potlucks</h3>
-    <a href="#" data-reveal-id="potluckModal" button class="button">Plan a Potluck</a><br><br>
+    <button id="newPotluck" class="button">Plan a Potluck</button><br><br>
     <ul>
       <% @potlucks.each do |potluck| %>
     <li>
-      <strong><a href="/deets_potluck/<%= potluck.id %>"><%= potluck.name %></a></strong> on <%= potluck.datetime %> at <%= potluck.location %> <a href="/edit_potluck/<%= potluck.id %>">Edit</a>
+      <strong><a href="/potlucks/<%= potluck.id %>"><%= potluck.name %></a></strong> on <%= potluck.datetime %> at <%= potluck.location %> <a href="/edit_potluck/<%= potluck.id %>">Edit</a>
     </li>
       <% end %>
     </ul>
   </div>
 </div>
-
-<div id="potluckModal" class="reveal-modal" data-reveal>
+<!-- form for new potluck -->
+<div id="potluckForm">
 
   <%= simple_form_for @potluck do |f| %>
     <%= f.input :name %>
@@ -55,10 +55,10 @@
           <div class="row">
             <div class="large-6 columns">
               <label>Keywords:</label>
-              <% Keyword.all.each do |keyword| %>
-                  <label for="checkbox + [<% keyword.id %>]"><input type="checkbox" id="checkbox + [<% keyword.id %>]"
-                  name="potluck[keyword_ids][]"  value="<%=keyword.id%>"><%= keyword.name %></label>
-                  <% end %>
+              <%# Keyword.all.each do |keyword| %>
+                  <label for="checkbox + [<%# keyword.id %>]"><input type="checkbox" id="checkbox + [<%# keyword.id %>]"
+                  name="potluck[keyword_ids][]"  value="<%#=keyword.id%>"><%#= keyword.name %></label>
+                  <%# end %>
             </div>
           </div>
     </fieldset>
@@ -69,6 +69,4 @@
       </div>
     </div>
     </form> -->
-
-
 </div>

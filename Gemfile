@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.4'
+ruby "2.0.0"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -25,6 +26,7 @@ end
 gem 'instagram'
 gem 'devise'
 gem 'simple_form'
+gem 'httparty'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -55,5 +57,4 @@ gem 'turbolinks'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-# gem 'debugger'
+# gem 'byebug'
