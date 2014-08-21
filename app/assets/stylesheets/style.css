@@ -1,13 +1,17 @@
+body {
+  margin-top: 60px;
+}
+
 .top-bar   {
-  height: 60px;
- background: #595959; /* Old browsers */
- background: -moz-linear-gradient(top, #595959 0%, #2c2c2c 100%); /* FF3.6+ */
- background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#595959), color-stop(100%,#2c2c2c)); /* Chrome,Safari4+ */
- background: -webkit-linear-gradient(top, #595959 0%,#2c2c2c 100%); /* Chrome10+,Safari5.1+ */
- background: -o-linear-gradient(top, #595959 0%,#2c2c2c 100%); /* Opera 11.10+ */
- background: -ms-linear-gradient(top, #595959 0%,#2c2c2c 100%); /* IE10+ */
- background: linear-gradient(to bottom, #595959 0%,#2c2c2c 100%); /* W3C */
- filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#595959', endColorstr='#2c2c2c',GradientType=0 ); /* IE6-9 */
+  height: 45px;
+  background: #595959; /* Old browsers */
+  background: -moz-linear-gradient(top, #595959 0%, #2c2c2c 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#595959), color-stop(100%,#2c2c2c)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #595959 0%,#2c2c2c 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #595959 0%,#2c2c2c 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #595959 0%,#2c2c2c 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #595959 0%,#2c2c2c 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#595959', endColorstr='#2c2c2c',GradientType=0 ); /* IE6-9 */
 
   margin-bottom: 0;
   padding-bottom: 0;
@@ -15,12 +19,24 @@
 
 }
 .top-bar .name h1 a {
- font-size: 50px;
- font-family: 'Oleo Script Swash Caps', cursive;
- color: red;
- letter-spacing: 2px;
- text-shadow:2px 2px 8px #000000;
+  font-size: 24px;
+  font-family: 'Oleo Script Swash Caps', cursive;
+  color: red;
+  letter-spacing: 2px;
+  text-shadow:2px 2px 8px #000000;
 
+}
+
+.top-bar-section ul {
+  background-color: none;
+}
+
+.luckypot {
+  font-size: 50px;
+  font-family: 'Oleo Script Swash Caps', cursive;
+  color: #FFCC00;
+  letter-spacing: 2px;
+  text-shadow:2px 2px 8px #000000;
 
 }
 .yellow {
@@ -40,10 +56,10 @@
   padding-bottom: 15px;
 }
 
-body {
-  margin-top: 60px;
+.button {
+  background-color: #FFCC00;
 }
 
-/*#potluckForm {
- visibility: hidden; 
-}*/
+.top-bar-section li.active:not(.has-form) a:not(.button) {
+  background-color: #FFCC00;
+}

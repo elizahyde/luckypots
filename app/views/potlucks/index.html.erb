@@ -14,7 +14,6 @@
 </div>
 <!-- form for new potluck -->
 <div id="potluckForm">
-
   <%= simple_form_for @potluck do |f| %>
     <%= f.input :name %>
     <%= f.input :location %>
@@ -23,50 +22,4 @@
     <%= f.collection_check_boxes :keyword_ids, Keyword.all, :id, :name %>
     <%= f.button :submit %>
   <% end %>
-
-<!--     <form method="post" action="/new_potluck" class="custom">
-      <Fieldset>
-        <legend>Create your Potluck</legend>
-          <div class="row">
-              <div class="large-12 columns">
-                <label>Potluck Name:</label>
-                <input type="text" name="potluck[name]" placeholder="i.e. Hot Dog Bonanza">
-              </div>
-          </div>
-
-          <div class="row">
-              <div class="large-12 columns">
-                <label>Location:</label>
-                <input type="text" name="potluck[location]" placeholder="i.e. South Park">
-              </div>
-            </div>
-
-          <div class="row">
-              <div class="large-6 columns">
-                <label>Date:</label>
-                <input type="date" name="potluck[date]">
-              </div>
-              <div class="large-6 columns">
-                <label>Time:</label>
-                <input type="time" name="time">
-              </div>
-          </div>
-
-          <div class="row">
-            <div class="large-6 columns">
-              <label>Keywords:</label>
-              <%# Keyword.all.each do |keyword| %>
-                  <label for="checkbox + [<%# keyword.id %>]"><input type="checkbox" id="checkbox + [<%# keyword.id %>]"
-                  name="potluck[keyword_ids][]"  value="<%#=keyword.id%>"><%#= keyword.name %></label>
-                  <%# end %>
-            </div>
-          </div>
-    </fieldset>
-<br>
-    <div class="row">
-      <div class="large-12 columns text-right">
-          <button class="button small">Create Potluck</button>
-      </div>
-    </div>
-    </form> -->
 </div>
