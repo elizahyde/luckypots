@@ -3,7 +3,7 @@ $(document).ready(function(){
 
 
 	$('#newItem').click(function() {
-		$('#itemForm').show();
+		$('#itemForm').fadeIn(600);
 		$('#newItem').hide();
 
 	})

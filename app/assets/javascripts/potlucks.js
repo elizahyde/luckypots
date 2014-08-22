@@ -5,8 +5,9 @@ $(document).ready(function(){
 
 
 	$('#newPotluck').click(function() {
-		$('#potluckForm').show();
-		$('#newPotluck').hide();
+				$('#newPotluck').hide();
+		$('#potluckForm').fadeIn(600)();
+
 
 	})
 });

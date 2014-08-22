@@ -1,17 +1,19 @@
 <div class="row">
-  <div class="large-8 columns large-centered">
+  <div class="medium-8 columns medium-centered">
     <h2 class="luckypot"><%= @potluck.name %></h2>
 
-      <ul><p><em><%= @potluck.keywords.map {|keyword| keyword.name }.join(" - ") %></em></p></ul>
+    <ul><p><em><%= @potluck.keywords.map {|keyword| keyword.name }.join(" - ") %></em></p></ul>
     <h4>Location: <%= @potluck.location %></h4>
     <h4>Date: <%= @potluck.datetime.strftime("%A, %b %d, %Y at %I:%M%p") %></h4>
       <button id="newItem" class="button">Add Item</button>
     <div id="itemForm">
-      <h3>Add an item</h3>
-      <form method="post" action="/new_item">
-        Item:
-        <input type="text" name="item[name]">
-        <input type="hidden" name="item[potluck_id]" value="<%= @potluck.id %>">
+      <%= form_for Item.new do |f| %>
+      <h2>Add Item</h2>
+        <%= f.label :item %>
+        <%= f.text_field :name %>
+        <%= f.hidden_field :potluck_id, :value => @potluck.id %>
+        <%= f.button :submit %>
+      <% end %>
 
 
       <!--This is just like how we pulled the stocks on the portfolio new/edit page
@@ -21,30 +23,26 @@
             name="item[tag_ids][]" id="checkbox" value="<%=tag.id%>"><%= tag.name %>
               <br>
             <% end %>
-
-          <button class="button">Create Item</button>
       </form>
     </div>
     <table>
       <thead>
         <tr>
           <th>Item</th>
-          <th>Tags</th>
+          <!-- <th>Tags</th> -->
           <th>Assigned?</th>
-          <th></th>
-        </tr>
+<!--           <th></th>
+ -->        </tr>
       </thead>
       <tbody>
         <tr>
           <% @potluck.items.each do |item| %>
           <td><%= item.name %></td>
-          <td><%= item.tags.map {|tag| tag.name }.join(", ") %></td>
+          <!-- <td><%= item.tags.map {|tag| tag.name }.join(", ") %></td> -->
           <td>
-          <% if item.person %> <%= item.person.name %>
-          <% else %>
-          <a href="/item_assign/<%=item.id%>">Claim</a><%end%></td>
-          <td><a href="/edit_item/<%= item.id %>">Edit</a></td>
-        </tr><% end %>
+          <a href="/item_assign/<%=item.id%>">Claim</a></td>
+<!--           <td><a href="/edit_item/<%= item.id %>">Edit</a></td>
+ -->        </tr><% end %>
       </tbody>
     </table>
 

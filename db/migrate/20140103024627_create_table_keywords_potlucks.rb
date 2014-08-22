@@ -1,13 +1,8 @@
 class CreateTableKeywordsPotlucks < ActiveRecord::Migration
-  def self.up
-        create_table :keywords_potlucks, :id => false do |t|
-           t.references :keyword
-           t.references :potluck
-           t.timestamps
-          end
-      end
-
-     def self.down
-        drop_table :keywords_potlucks
-     end
+  def change
+    create_table :keywords_potlucks, id: false do |t|
+      t.integer :keyword_id
+      t.integer :potluck_id
+    end
+  end
 end

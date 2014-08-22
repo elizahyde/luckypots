@@ -1,5 +1,5 @@
 body {
-  margin-top: 60px;
+ /* margin-top: 60px;*/
 }
 
 .top-bar   {
@@ -21,7 +21,7 @@ body {
 .top-bar .name h1 a {
   font-size: 24px;
   font-family: 'Oleo Script Swash Caps', cursive;
-  color: red;
+  color: #FFCC00;
   letter-spacing: 2px;
   text-shadow:2px 2px 8px #000000;
 
@@ -31,14 +31,14 @@ body {
   background-color: none;
 }
 
-.luckypot {
+/*.luckypot {
   font-size: 50px;
   font-family: 'Oleo Script Swash Caps', cursive;
   color: #FFCC00;
   letter-spacing: 2px;
   text-shadow:2px 2px 8px #000000;
 
-}
+}*/
 .yellow {
   color: #FFCC00;
   display: inline;

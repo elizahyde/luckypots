@@ -1,6 +1,7 @@
 class PotlucksController < ApplicationController
   def show
     @potluck = Potluck.find(params[:id])
+    @items = Item.new
     respond_to do |format|
       format.html
       format.js

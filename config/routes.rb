@@ -2,6 +2,7 @@ Luckypots::Application.routes.draw do
   get '/admin', to: 'keywords#admin'
   resources :potlucks
   resources :keywords
+  resources :items
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

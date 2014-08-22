@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="large-12 columns">
+  <div class="medium-8 columns medium-centered">
 
       <h3 class="luckypot">Item Tags</h3>
       <a href="new_tag" class="button small">New Item tag</a><br><br>
@@ -27,7 +27,7 @@
       <ul>
         <% @items.each do |item| %>
           <li>
-            <strong><%= item.name %></strong> <a href="/edit_item/<%= item.id %>">Edit</a> tags: <%= item.tags.map {|tag| tag.name }.join(", ") %> at potluck: <%= (item.potluck.name if item.potluck) %> and brought by <%= (item.person.name if item.person) %>
+            <strong><%= item.name %></strong> <a href="/edit_item/<%= item.id %>">Edit</a> tags: <%= item.tags.map {|tag| tag.name }.join(", ") %> at potluck: <%= (item.potluck.name if item.potluck) %> and brought by <#%= (item.person.name if item.person) %>
           </li>
         <% end %>
       </ul>
