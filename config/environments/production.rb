@@ -23,7 +23,7 @@ Luckypots::Application.configure do
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
-  config.action_dispatch.x_sendfile_header = nil # For Heroku
+  # config.action_dispatch.x_sendfile_header = nil # For Heroku
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
