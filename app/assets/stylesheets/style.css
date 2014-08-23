@@ -1,5 +1,6 @@
 body {
  /* margin-top: 60px;*/
+
 }
 
 .top-bar   {
@@ -44,6 +45,10 @@ body {
   display: inline;
 }
 
+.profilePic {
+  height: 45px;
+}
+
 .tagsFeed{
   list-style-type: none;
 }
@@ -62,4 +67,21 @@ body {
 
 .top-bar-section li.active:not(.has-form) a:not(.button) {
   background-color: #FFCC00;
+}
+
+.potluckList {
+  border: 1px solid #F5F5F5;
+  border-left: 3px solid #FFCC00;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #F5F5F5;
+  margin-bottom: 10px;
+}
+
+table {
+
+  border-left: 3px solid #FFCC00;
+
 }

@@ -1,3 +1,10 @@
+<div>
+  <ul class="large-block-grid-8">
+    <% get_potluck_pictures.first(16).each do |picture| %>
+    <li><img src="<%=picture%>"></li>
+    <% end %>
+  </ul>
+</div>
 <div class="row">
   <div class="medium-8 columns medium-centered">
     <h3 class="luckypot">Upcoming Potlucks</h3>
@@ -16,6 +23,7 @@
         <%= f.button :submit %>
       <% end %>
     </div>
+    <div class="potluckList">
     <ul>
       <% @potlucks.each do |potluck| %>
       <li>
@@ -23,5 +31,6 @@
       </li>
       <% end %>
     </ul>
+  </div>
   </div>
 </div>

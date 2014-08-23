@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
 	def show
+		Sleep 1
     @item = Item.find(params[:id])
     respond_to do |format|
       format.html
@@ -9,13 +10,21 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+
+		respond_to do |format|
+	    format.html # new.html.erb
+	    format.js
+	  end
   end
 
   def create
     @item = Item.new(item_params)
 
     if @item.save
-      redirect_to :back
+      respond_to do |format|
+		    format.html { redirect_to :back}
+		    format.js
+    	end
     else
       render :new
     end

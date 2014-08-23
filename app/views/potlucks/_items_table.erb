@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <!-- <th>Tags</th> -->
+      <th>Assigned?</th>
+<!--           <th></th>
+-->        </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @potluck.items.each do |item| %>
+      <td><%= item.name %></td>
+      <!-- <td><%= item.tags.map {|tag| tag.name }.join(", ") %></td> -->
+      <td>
+      <a href="/item_assign/<%=item.id%>">Claim</a></td>
+<!--           <td><a href="/edit_item/<%= item.id %>">Edit</a></td>
+-->        </tr><% end %>
+  </tbody>
+</table>
