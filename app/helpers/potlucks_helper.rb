@@ -4,8 +4,8 @@ module PotlucksHelper
 	CALLBACK_URL = "http://localhost:4567/oauth/callback"
 
 	Instagram.configure do |config|
-	  config.client_id = "7332fc7e51744686ba5b4788611dd482"
-	  config.client_secret = "9f3c18fe954d4d6d8b7199578c3510a7"
+	  config.client_id = ENV['INSTACLIENTID']
+	  config.client_secret = ENV['INSTACLIENTSECRET']
 	end
 
 	def get_potluck_pictures
