@@ -1,5 +1,5 @@
 <div>
-  <ul class="large-block-grid-8">
+  <ul class="large-block-grid-8" id="photoBlock">
     <% get_potluck_pictures.first(16).each do |picture| %>
     <li><img src="<%=picture%>"></li>
     <% end %>
@@ -8,7 +8,7 @@
 <div class="row">
   <div class="medium-8 columns medium-centered">
     <h3 class="luckypot">Upcoming Potlucks</h3>
-    <button id="newPotluck" class="button">Plan a Potluck</button><br><br>
+    <button id="newPotluck" class="button">Plan a Potluck</button>
      <!-- form for new potluck. -->
     <div id="potluckForm">
       <%= form_for :potluck do |f| %>
@@ -20,7 +20,7 @@
         <%= f.label :datetime %>
         <%= f.datetime_local_field :datetime %> 
         <%= f.collection_check_boxes :keyword_ids, Keyword.all, :id, :name %>
-        <%= f.button :submit %>
+        <%= f.button :submit, id: "submitPotluck" %>
       <% end %>
     </div>
     <div class="potluckList">

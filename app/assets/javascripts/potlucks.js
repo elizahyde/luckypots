@@ -3,9 +3,21 @@
 $(document).ready(function(){
 	// Hide New Potluck form on page load
 	$('#potluckForm').hide();
+
+	// When clicking to make new potluck
 	$('#newPotluck').click(function() {
+		$('#photoBlock').slideUp();
 		$('#newPotluck').hide();
 		$('#potluckForm').fadeIn(600)();
+	});
+
+	// // When clicking to save new potluck
+	// $('#submitPotluck').click(function() {
+	// 	$('#potluckForm').fadeout(600)();
+	// 	$('#photoBlock').slideDown();
+	// 	$('#newPotluck').show();
+	// });
+
 
 
 	var refresh_items_table = function(){
@@ -19,5 +31,4 @@ $(document).ready(function(){
   $("#refresh_items").on('click', refresh_items_table);
 
 
-	})
 });

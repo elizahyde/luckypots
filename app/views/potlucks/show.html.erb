@@ -2,13 +2,13 @@
   <div class="medium-8 columns medium-centered">
     <h2 class="luckypot"><%= @potluck.name %></h2>
     <div>
-      <ul class="medium-block-grid-4">
+      <ul class="medium-block-grid-4" id="peopleBlock">
         <% get_singles_photos.first(8).each do |picture| %>
         <li><img src="<%=picture%>"></li>
         <% end %>
       </ul>
     </div>
-    
+
     <div>
       <ul>
         <p><em><%= @potluck.keywords.map {|keyword| keyword.name }.join(" - ") %></em></p>
@@ -20,7 +20,7 @@
     </div>
 
     <div id="itemForm">
-      <%= form_for Item.new do |f| %>
+      <%= form_for Item.new, :remote => true do |f| %>
       <h2>Add Item</h2>
         <%= f.label :item %>
         <%= f.text_field :name %>

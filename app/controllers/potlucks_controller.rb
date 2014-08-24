@@ -16,7 +16,7 @@ class PotlucksController < ApplicationController
     @potluck = Potluck.new(potluck_params)
 
     if @potluck.save
-      redirect_to "/"
+      redirect_to potluck_path(@potluck.id)
     else
       render :new
     end

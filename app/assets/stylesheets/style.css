@@ -1,7 +1,3 @@
-body {
- /* margin-top: 60px;*/
-
-}
 
 .top-bar   {
   height: 45px;
@@ -13,7 +9,6 @@ body {
   background: -ms-linear-gradient(top, #595959 0%,#2c2c2c 100%); /* IE10+ */
   background: linear-gradient(to bottom, #595959 0%,#2c2c2c 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#595959', endColorstr='#2c2c2c',GradientType=0 ); /* IE6-9 */
-
   margin-bottom: 0;
   padding-bottom: 0;
   z-index: 99;
@@ -38,8 +33,8 @@ body {
   color: #FFCC00;
   letter-spacing: 2px;
   text-shadow:2px 2px 8px #000000;
-
 }*/
+
 .yellow {
   color: #FFCC00;
   display: inline;
@@ -81,7 +76,5 @@ body {
 }
 
 table {
-
   border-left: 3px solid #FFCC00;
-
 }

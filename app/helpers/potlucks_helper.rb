@@ -14,6 +14,7 @@ module PotlucksHelper
 	  while results_array.length < 26
 	    results.each do |image|
 	      url = image.images.thumbnail.url
+
 	        results_array << url
 	    end
 
