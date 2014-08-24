@@ -8,7 +8,7 @@ $(document).ready(function(){
 	$('#newPotluck').click(function() {
 		$('#photoBlock').slideUp();
 		$('#newPotluck').hide();
-		$('#potluckForm').fadeIn(600)();
+		$('#potluckForm').fadeIn();
 	});
 
 	// // When clicking to save new potluck
