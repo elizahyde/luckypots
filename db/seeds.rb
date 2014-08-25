@@ -8,7 +8,7 @@
 
 Potluck.destroy_all
 Keyword.destroy_all
-Items.destroy_all
+Item.destroy_all
 
 themed = Keyword.create!(name: 'Themed')
 international = Keyword.create!(name: 'International')

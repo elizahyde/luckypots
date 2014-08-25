@@ -27,6 +27,8 @@
         <%= f.hidden_field :potluck_id, :value => @potluck.id %>
         <%= f.button :submit, :id => "refresh_items" %>
       <% end %>
+
+      
 <!-- Tags are not currently set up -->
         <% Tag.all.each do |tag| %>
             <input type="checkbox"

@@ -7,9 +7,7 @@
 </div>
 <div class="row">
   <div class="medium-8 columns medium-centered">
-    <h3 class="luckypot">Upcoming Potlucks</h3>
-    <button id="newPotluck" class="button">Plan a Potluck</button>
-     <!-- form for new potluck. -->
+        <!-- form for new potluck. -->
     <div id="potluckForm">
       <%= form_for :potluck do |f| %>
       <h2>New Potluck</h2>
@@ -23,6 +21,9 @@
         <%= f.button :submit, id: "submitPotluck" %>
       <% end %>
     </div>
+
+    <h3 class="luckypot">Upcoming Potlucks</h3>
+    <button id="newPotluck" class="button">Plan a Potluck</button>
     <div class="potluckList">
     <ul>
       <% @potlucks.each do |potluck| %>

@@ -20,13 +20,13 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
 
-    if @item.save
-      respond_to do |format|
-		    format.html { redirect_to :back}
-		    format.js
-    	end
-    else
-      render :new
+    respond_to do |format|
+      if @item.save
+        format.html { redirect_to :back, notice: 'Item was successfully created.' }
+        format.js
+      else
+        format.html { render :new }
+      end
     end
   end
 

@@ -1,5 +1,3 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
 $(document).ready(function(){
 	// Hide New Potluck form on page load
 	$('#potluckForm').hide();
@@ -11,24 +9,19 @@ $(document).ready(function(){
 		$('#potluckForm').fadeIn();
 	});
 
-	// // When clicking to save new potluck
-	// $('#submitPotluck').click(function() {
-	// 	$('#potluckForm').fadeout(600)();
-	// 	$('#photoBlock').slideDown();
-	// 	$('#newPotluck').show();
-	// });
 
+// Hack way of showing new items. It is all an optical illusion...
+var items = [];
 
+$('#refresh_items').click(function() {
+	var newItem = $('#item_name').val();
+	items.push(newItem);
 
-	var refresh_items_table = function(){
-    $.ajax({
-      dataType: "script",
-      type: "get",
-      url: "/potlucks/refresh_items"
-    });
-  };
+	$('#items_table tr:last').after('<tr><td>'+ newItem + '</td><td></td></tr>');
+	$(this).closest('form').find("input[type=text]").val("");
 
-  $("#refresh_items").on('click', refresh_items_table);
+});
+
 
 
 });
